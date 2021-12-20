@@ -21,7 +21,8 @@ public class PetController {
 
     @PostMapping
     public PetDTO savePet(@RequestBody PetDTO petDTO) {
-        Pet pet = new Pet(petDTO.getType(), petDTO.getName(), petDTO.getBirthDate(), petDTO.getNotes());
+        Pet pet = new Pet(petDTO.getType(), petDTO.getName(),
+                petDTO.getBirthDate(), petDTO.getNotes());
         PetDTO convertedPet;
         convertedPet = convertPetToPetDTO(petService.savePet(pet, petDTO.getOwnerId()));
 
